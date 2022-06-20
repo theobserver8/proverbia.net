@@ -14,7 +14,10 @@ def getFrase():
     posAutor = rawText.find('<a title=', finFrase)
     iniAutor = rawText.find('>', posAutor)
     finAutor = rawText.find('</a>', iniAutor)
-    autor = rawText[iniAutor+2:finAutor]
+    i = 1
+    while rawText[iniAutor + i] ==  ' ':
+        i += 1
+    autor = rawText[iniAutor+i:finAutor]
 
     return frase, autor
 
